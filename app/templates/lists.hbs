@@ -1,12 +1,13 @@
-<div class="jumbotron text-center">
-  <h1>{{ model.length }}</h1>
-  <form {{ action "create" on="submit" }}>
-    {{input type="text" class="form-control" value=listTitle placeholder="Nombre lista..."}}
-    {{input type="submit" class="btn btn-success" value="Crear Lista"}}
-  </form>
-</div>
-<div class="infine-width lists">
-  {{#each model as |list| }}
-    {{#trello-list list=list}} {{/trello-list}}
-  {{/each}}
+<div class="lists-container">
+  <div class="infinite-width lists">
+    {{#each model as |list| }}
+      {{#trello-list list=list}} {{/trello-list}}
+    {{/each}}
+    <div class="new-list">
+      <form {{ action "create" on="submit" }}>
+        {{input type="text" class="form-control" value=listTitle placeholder="Nombre lista..."}}
+        {{input type="submit" class="btn btn-success" value="Crear Lista"}}
+      </form>
+    </div>
+  </div>
 </div>
