@@ -1,7 +1,7 @@
 <div class="lists-container">
   <div class="infinite-width lists">
     {{#each model as |list| }}
-      {{#trello-list list=list}} {{/trello-list}}
+      {{#trello-list list=list action="addItem"}} {{/trello-list}}
     {{/each}}
     <div class="new-list">
       <form {{ action "create" on="submit" }}>

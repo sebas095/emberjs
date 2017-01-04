@@ -8,6 +8,18 @@ export default Ember.Controller.extend({
       });
 
       list.save();
+    },
+    addItem(description, list) {
+      // Vamos a guardar el item
+      const item = this.store.createRecord('item', {
+        description: description
+      });
+
+      list.get('items').then(() => {
+        list.get('items').addObject(item);
+        item.save();
+        list.save();
+      });
     }
   }
 });
