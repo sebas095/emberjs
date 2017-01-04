@@ -5,3 +5,8 @@
     {{input type="submit" class="btn btn-success" value="Crear Lista"}}
   </form>
 </div>
+<div class="infine-width lists">
+  {{#each model as |list| }}
+    {{#trello-list list=list}} {{/trello-list}}
+  {{/each}}
+</div>
