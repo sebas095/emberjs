@@ -48,3 +48,7 @@ body {
   border-radius: 3px;
   overflow: scroll;
 }
+
+.form-hide {
+  display: none;
+}

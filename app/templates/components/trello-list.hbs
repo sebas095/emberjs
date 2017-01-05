@@ -1,18 +1,25 @@
 <div class="list">
-  <h2>{{ list.title }}</h2>
+  <div class="row">
+    <div class="col-xs-10">
+      <h2>{{ list.title }}</h2>
+    </div>
+    <div class="col-xs-2">
+      <button class="btn btn-link glyphicon glyphicon-plus" {{ action "showForm" }}></button>
+    </div>
+  </div>
   <div class="todos">
     <div class="form-hide">
       <form {{ action "addItem" on="submit" }}>
         {{ textarea class="form-control" value=itemDescription }}
         <div class="actions">
           <button type="submit" class="btn btn-success">Añadir</button>
-          <button class="btn btn-link glyphicon glyphicon-remove" {{ action "close" }}></button>
+          <button class="btn btn-link glyphicon glyphicon-remove" {{ action "hideForm" }}></button>
         </div>
       </form>
-      {{#each list.items as |item| }}
-        {{#trello-item  item=item}} {{/trello-item}}
-      {{/each}}
     </div>
+    {{#each list.items as |item| }}
+      {{#trello-item  item=item}} {{/trello-item}}
+    {{/each}}
   </div>
   <div class="actions text-center">
     <button type="button" class="btn btn-danger" {{ action "delete" }}>
