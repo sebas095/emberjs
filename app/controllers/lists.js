@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
         description: description
       });
 
-      list.get('items').then(() => {
+      list.get('items').then((items) => {
         list.get('items').addObject(item);
         item.save();
         list.save();

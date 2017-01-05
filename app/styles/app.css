@@ -22,10 +22,6 @@ body {
   white-space: nowrap;
 }
 
-.new-list {
-  padding: 1em;
-}
-
 .new-list input[type="submit"] {
   margin-top: 0.8em;
 }
@@ -36,4 +32,19 @@ body {
   width: 300px;
   vertical-align: top;
   margin-right: 1em;
+  padding: 10px;
+}
+
+.new-list {
+  padding: 1em;
+}
+
+.card {
+  padding: 10px;
+  background-color: white;
+  margin-top: 8px;
+  margin-right: 8px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: scroll;
 }
